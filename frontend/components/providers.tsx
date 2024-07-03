@@ -1,0 +1,15 @@
+"use client"
+
+import * as React from "react"
+import { Toaster } from '@/components/ui/sonner'
+import { ThemeProvider as NextThemesProvider } from "next-themes"
+import { type ThemeProviderProps } from "next-themes/dist/types"
+
+export function Providers({ children, ...props }: ThemeProviderProps) {
+  return (
+    <NextThemesProvider {...props}>
+      {children}
+      <Toaster position="top-center" richColors />
+    </NextThemesProvider>
+  )
+}
